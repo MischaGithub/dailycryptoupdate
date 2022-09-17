@@ -47,7 +47,7 @@
       margin: 0;
       width: 100%;
       padding: vw(320, 5) 0;
-      padding-inline-start: 0;
+      padding-inline-start: vw(320, 5);
       list-style: none;
 
       .headerNumber {
@@ -92,6 +92,14 @@
       padding: 0;
       padding-inline-start: 0;
       list-style: none;
+      width: 100%;
+
+      .coinBlock {
+        display: block;
+        position: relative;
+        margin: 0 auto vw(320, 17);
+        width: 100%;
+      }
     }
   }
 }
@@ -114,25 +122,25 @@
       margin: 0 auto vw(1024, 10);
 
       .headerContainer {
-        margin: 0 auto vw(1024, 20);
+        margin: 0 auto vw(1024, 30);
       }
 
       .headerList {
         .headerNumber {
-          padding: 0 vw(1024, 60) 0 0;
+          padding: 0 vw(1024, 20) 0 0;
         }
 
         .headerCoin {
-          padding: 0 vw(1024, 200) 0 0;
+          padding: 0 vw(1024, 210) 0 0;
         }
 
         .headerPrice {
-          padding: 0 vw(1024, 80) 0 0;
+          padding: 0 vw(1024, 150) 0 0;
         }
 
         .headerMktCap {
           display: block;
-          padding: 0 vw(1024, 120) 0 0;
+          padding: 0 vw(1024, 140) 0 0;
         }
 
         .headerChart {
@@ -149,12 +157,9 @@
       }
 
       .cryptoList {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        padding-inline-start: 0;
-        list-style: none;
+        .coinBlock {
+          margin: 0 auto vw(1024, 30);
+        }
       }
     }
   }
