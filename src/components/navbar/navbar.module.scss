@@ -8,6 +8,7 @@
 .navbar {
   display: block;
   position: relative;
+  margin: 0 auto;
   width: 100vw;
   height: vw(320, 50);
   background: #ffffff;
@@ -47,6 +48,9 @@
   }
 
   .heading {
+    display: inline-block;
+    margin: 0;
+    padding-top: vw(320, 15);
     font-style: normal;
     font-weight: 900;
     font-size: vw(1024, 40);
@@ -69,12 +73,13 @@
     }
 
     .navItems {
-      padding: vw(1280, 11) vw(1280, 67) 0 vw(1280, 59);
+      padding: vw(1024, 11) vw(1280, 67) 0 vw(1024, 59);
     }
 
     .heading {
-      font-size: vw(1280, 20);
-      line-height: vw(1280, 21);
+      font-size: vw(1024, 20);
+      line-height: vw(1024, 21);
+      padding-top: vw(1024, 5);
     }
   }
 }
