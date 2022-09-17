@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Dashboard />} />
-        <Route path='/books' element={<CoinInformationDashboard />} />
+        <Route path='/coins/:id' element={<CoinInformationDashboard />} />
       </Routes>
     </div>
   );

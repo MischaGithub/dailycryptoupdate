@@ -1,6 +1,6 @@
 import React from 'react';
 import CryptoItem from '../../components/crypto-item';
-import fetchInititalData from '../../components/utils/fetchInititalData';
+import fetchInititalData from '../../utils/fetchData';
 import styles from './dashboard.module.scss';
 
 const Dashboard = () => {
