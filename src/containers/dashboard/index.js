@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from '../../components/loader';
 import CryptoItem from '../../components/crypto-item';
 import fetchInititalData from '../../utils/fetchData';
 import styles from './dashboard.module.scss';
@@ -14,7 +15,9 @@ const Dashboard = () => {
         <h1 className={styles.headingTitle}>Cryptocurrency Prices</h1>
       </div>
 
-      {!loading && (
+      {loading ? (
+        <Loader />
+      ) : (
         <section className={styles.cryptoSectionContainer}>
           <div className={styles.headerContainer}>
             <ul className={styles.headerList}>
