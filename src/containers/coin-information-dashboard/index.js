@@ -15,7 +15,6 @@ const CoinInformationDashboard = () => {
   );
 
   const { name, market_cap_rank, image, market_data } = response;
-  console.log(loading);
 
   return loading ? (
     <Loader />

@@ -10,8 +10,6 @@ const getChartData = async (id, days, setNewData) => {
     return json;
   } catch (error) {
     console.log(error);
-  } finally {
-    console.log('done');
   }
 };
 
