@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Oval } from 'react-loader-spinner';
 import CoinChart from '../../components/coin-chart';
+import Loader from '../../components/loader';
 import fetchData from '../../utils/fetchData';
 import { useParams } from 'react-router-dom';
 import { currencyFormatter } from '../../utils/currencyFormatter';
@@ -18,20 +18,7 @@ const CoinInformationDashboard = () => {
   console.log(loading);
 
   return loading ? (
-    <div className={styles.coinInfoContainer}>
-      <Oval
-        height={200}
-        width={200}
-        color='	rgb(96, 130, 182)'
-        wrapperStyle={{}}
-        wrapperClass={styles.loaderContainer}
-        visible={true}
-        ariaLabel='oval-loading'
-        secondaryColor='#4fa94d'
-        strokeWidth={2}
-        strokeWidthSecondary={2}
-      />
-    </div>
+    <Loader />
   ) : (
     <div className={styles.coinInfoContainer}>
       <section className={styles.coinDesContainer}>
