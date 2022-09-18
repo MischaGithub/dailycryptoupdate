@@ -4,7 +4,6 @@ import { currencyFormatter } from '../../utils/currencyFormatter';
 import styles from './crypto-item.module.scss';
 
 const CryptoItem = ({ coinItem }) => {
-  console.log(coinItem, 'coin');
   return (
     <Link to={`/coins/${coinItem.id}`} original-title=''>
       <div className={styles.coinContainer}>
