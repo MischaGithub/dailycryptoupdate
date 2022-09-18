@@ -77,41 +77,37 @@ const CoinChart = () => {
 
   return (
     <div className={styles.chartContainer}>
-      <div className={styles.pricesButtonsContainer}>
-        <h3 className={styles.heading}>Prices</h3>
-        <ul className={styles.buttonsListContainer}>
-          {categoryDataOptions?.map((category) => (
-            <li key={category.name}>
-              <button
-                className={
-                  selection === category.value
-                    ? styles.buttonItemDefault
-                    : styles.buttonItem
-                }
-                onClick={(e) => handleSelectionUpdate(e, `${category?.value}`)}
-              >
-                <span className={styles.buttonTitle}>{category?.name}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-        <ul className={styles.buttonsListContainer}>
-          {pricesDataOptions?.map((price) => (
-            <li key={price.name}>
-              <button
-                className={
-                  days === price.value
-                    ? styles.buttonItemHourDefault
-                    : styles.buttonItemHour
-                }
-                onClick={(e) => handleDayUpdate(e, `${price?.value}`)}
-              >
-                <span className={styles.buttonTitle}>{price?.name}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className={styles.buttonsListContainer}>
+        {categoryDataOptions?.map((category) => (
+          <li
+            className={
+              selection === category.value
+                ? styles.buttonItemDefault
+                : styles.buttonItem
+            }
+            onClick={(e) => handleSelectionUpdate(e, `${category?.value}`)}
+          >
+            <span className={styles.buttonTitle}>{category?.name}</span>
+          </li>
+        ))}
+      </ul>
+      <ul className={styles.buttonsListContainer}>
+        {pricesDataOptions?.map((price) => (
+          <li key={price.name}>
+            <button
+              className={
+                days === price.value
+                  ? styles.buttonItemDefault
+                  : styles.buttonItem
+              }
+              onClick={(e) => handleDayUpdate(e, `${price?.value}`)}
+            >
+              <span className={styles.buttonTitle}>{price?.name}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+
       <Line options={options} data={data} />
     </div>
   );
