@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/daily-crypto-update/static/css/main.e6abc14f.css",
+    "main.js": "/daily-crypto-update/static/js/main.53c0e648.js",
+    "static/js/787.5b33f7fe.chunk.js": "/daily-crypto-update/static/js/787.5b33f7fe.chunk.js",
+    "static/media/trade.png": "/daily-crypto-update/static/media/trade.a9c5b18ae114b2dff10f.png",
+    "index.html": "/daily-crypto-update/index.html",
+    "main.e6abc14f.css.map": "/daily-crypto-update/static/css/main.e6abc14f.css.map",
+    "main.53c0e648.js.map": "/daily-crypto-update/static/js/main.53c0e648.js.map",
+    "787.5b33f7fe.chunk.js.map": "/daily-crypto-update/static/js/787.5b33f7fe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6abc14f.css",
+    "static/js/main.53c0e648.js"
+  ]
+}
