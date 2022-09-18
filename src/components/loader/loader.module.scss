@@ -1,0 +1,12 @@
+.coinInfoContainer {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+
+  .loaderContainer {
+    margin: 15vw auto;
+  }
+}
