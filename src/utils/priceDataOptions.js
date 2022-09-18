@@ -8,3 +8,9 @@ export const pricesDataOptions = [
   { name: '1y', value: '1y' },
   { name: 'Max', value: 'max' },
 ];
+
+export const categoryDataOptions = [
+  { name: 'Price', value: 'prices' },
+  { name: 'Market Cap', value: 'market_caps' },
+  { name: 'Total Volume', value: 'total_volumes' },
+];

@@ -13,6 +13,11 @@
   margin: vw(320, 30) auto;
   background: white;
 
+  .loaderContainer {
+    display: block;
+    margin: vw(320, 30) auto;
+  }
+
   .coinDesContainer {
     display: flex;
     flex-direction: row;

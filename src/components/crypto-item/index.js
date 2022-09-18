@@ -4,6 +4,7 @@ import { currencyFormatter } from '../../utils/currencyFormatter';
 import styles from './crypto-item.module.scss';
 
 const CryptoItem = ({ coinItem }) => {
+  console.log(coinItem, 'coin');
   return (
     <Link to={`/coins/${coinItem.id}`} original-title=''>
       <div className={styles.coinContainer}>
@@ -29,10 +30,19 @@ const CryptoItem = ({ coinItem }) => {
               {currencyFormatter.format(coinItem?.market_cap)}
             </span>
           </li>
+
           <li className={styles.coinChart}>
-            <span className={styles.coinInfoLabelPrice}>
-              {currencyFormatter.format(coinItem?.price_change_24h)}
-            </span>
+            {coinItem?.price_change_24h < 0 ? (
+              <span className={styles.coinInfoLabelPriceR}>
+                {parseFloat(coinItem?.price_change_percentage_24h).toFixed(2) +
+                  '%'}
+              </span>
+            ) : (
+              <span className={styles.coinInfoLabelPriceG}>
+                {parseFloat(coinItem?.price_change_percentage_24h).toFixed(2) +
+                  '%'}
+              </span>
+            )}
           </li>
         </ul>
       </div>

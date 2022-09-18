@@ -48,6 +48,35 @@
       margin: 0 vw(320, 5) 0 0;
       border: none;
       cursor: pointer;
+      background: rgb(184, 184, 184);
+      height: vw(320, 30);
+      max-height: vw(320, 20);
+      border-radius: vw(320, 10);
+      width: vw(320, 150);
+      max-width: vw(320, 50);
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .buttonItemDefault {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
       background: rgb(71, 135, 120);
       height: vw(320, 30);
       max-height: vw(320, 20);
@@ -68,6 +97,33 @@
     }
 
     .buttonItemHour {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      background: rgb(184, 184, 184);
+      height: vw(320, 30);
+      max-height: vw(320, 20);
+      border-radius: vw(320, 10);
+      width: vw(320, 100);
+      max-width: vw(320, 30);
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .buttonItemHourDefault {
       display: block;
       position: relative;
       margin: 0 vw(320, 5) 0 0;

@@ -13,7 +13,11 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
-import { pricesDataOptions } from '../../utils/priceDataOptions';
+import {
+  pricesDataOptions,
+  categoryDataOptions,
+} from '../../utils/priceDataOptions';
+import getChartData from '../../utils/getChartData';
 import styles from './coin-chart.module.scss';
 
 ChartJS.register(
@@ -29,41 +33,30 @@ ChartJS.register(
 
 const CoinChart = () => {
   const { id } = useParams();
+  const [selection, setSelection] = useState('prices');
   const [days, setDays] = useState('24h');
   const [newData, setNewData] = useState(null);
 
-  const handleChartUpdate = async (e, value) => {
+  const handleDayUpdate = async (e, value) => {
     setDays(value);
   };
 
-  const getChartData = async () => {
-    try {
-      const res = await fetch(
-        `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=zar&days=${days}`
-      );
-
-      const json = await res.json();
-      console.log(json, 'prices');
-      setNewData(json);
-
-      return json;
-    } catch (error) {
-      console.log(error);
-    } finally {
-      console.log('done');
-    }
+  const handleSelectionUpdate = async (e, value) => {
+    setSelection(value);
   };
 
   useEffect(() => {
-    getChartData();
+    getChartData(id, days, setNewData);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [days]);
 
-  const chartData = newData?.prices?.map((val) => ({
-    x: val[0],
-    y: val[1]?.toFixed(2),
-  }));
+  const chartData =
+    newData &&
+    newData[selection ?? selection]?.map((val) => ({
+      x: val[0],
+      y: val[1]?.toFixed(2),
+    }));
 
   const options = {
     responsive: true,
@@ -87,11 +80,31 @@ const CoinChart = () => {
       <div className={styles.pricesButtonsContainer}>
         <h3 className={styles.heading}>Prices</h3>
         <ul className={styles.buttonsListContainer}>
+          {categoryDataOptions?.map((category) => (
+            <li key={category.name}>
+              <button
+                className={
+                  selection === category.value
+                    ? styles.buttonItemDefault
+                    : styles.buttonItem
+                }
+                onClick={(e) => handleSelectionUpdate(e, `${category?.value}`)}
+              >
+                <span className={styles.buttonTitle}>{category?.name}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+        <ul className={styles.buttonsListContainer}>
           {pricesDataOptions?.map((price) => (
             <li key={price.name}>
               <button
-                className={styles.buttonItemHour}
-                onClick={(e) => handleChartUpdate(e, `${price?.value}`)}
+                className={
+                  days === price.value
+                    ? styles.buttonItemHourDefault
+                    : styles.buttonItemHour
+                }
+                onClick={(e) => handleDayUpdate(e, `${price?.value}`)}
               >
                 <span className={styles.buttonTitle}>{price?.name}</span>
               </button>
