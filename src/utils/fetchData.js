@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const fetchInititalData = (param) => {
+const fetchData = (param) => {
   const [response, setResponse] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -31,4 +31,4 @@ const fetchInititalData = (param) => {
   return { response, loading, error };
 };
 
-export default fetchInititalData;
+export default fetchData;

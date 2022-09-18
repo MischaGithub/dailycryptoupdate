@@ -10,6 +10,7 @@
   position: relative;
   margin: vw(320, 30) auto 0;
   width: 100vw;
+  background: white;
 
   .headingContainer {
     display: block;
@@ -99,6 +100,7 @@
         position: relative;
         margin: 0 auto vw(320, 17);
         width: 100%;
+        cursor: pointer;
       }
     }
   }
