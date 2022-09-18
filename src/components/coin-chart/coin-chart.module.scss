@@ -12,26 +12,6 @@
   margin: vw(320, 10) auto;
   width: 90vw;
 
-  .pricesButtonsContainer {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: 0 auto;
-
-    .heading {
-      display: inline-block;
-      margin: 0;
-      padding-bottom: vw(320, 10);
-      font-style: normal;
-      font-weight: 900;
-      font-size: vw(320, 13);
-      line-height: vw(320, 15);
-      text-align: center;
-      letter-spacing: vw(320, 3);
-      color: #000;
-    }
-  }
-
   .buttonsListContainer {
     display: flex;
     flex-direction: row;
@@ -48,12 +28,9 @@
       margin: 0 vw(320, 5) 0 0;
       border: none;
       cursor: pointer;
+      padding: vw(320, 5) vw(320, 10);
       background: rgb(184, 184, 184);
-      height: vw(320, 30);
-      max-height: vw(320, 20);
       border-radius: vw(320, 10);
-      width: vw(320, 150);
-      max-width: vw(320, 50);
       appearance: none;
       -webkit-tap-highlight-color: transparent;
 
@@ -73,16 +50,13 @@
       display: block;
       position: relative;
       margin: 0 vw(320, 5) 0 0;
+      padding: vw(320, 5) vw(320, 10);
       border: none;
       cursor: pointer;
       appearance: none;
       -webkit-tap-highlight-color: transparent;
       background: rgb(71, 135, 120);
-      height: vw(320, 30);
-      max-height: vw(320, 20);
       border-radius: vw(320, 10);
-      width: vw(320, 150);
-      max-width: vw(320, 50);
 
       .buttonTitle {
         display: block;
@@ -95,58 +69,37 @@
         color: #fff;
       }
     }
+  }
+}
 
-    .buttonItemHour {
-      display: block;
-      position: relative;
-      margin: 0 vw(320, 5) 0 0;
-      border: none;
-      cursor: pointer;
-      background: rgb(184, 184, 184);
-      height: vw(320, 30);
-      max-height: vw(320, 20);
-      border-radius: vw(320, 10);
-      width: vw(320, 100);
-      max-width: vw(320, 30);
-      appearance: none;
-      -webkit-tap-highlight-color: transparent;
+@media screen and (min-width: 786px) and (max-width: 1920px) {
+  .chartContainer {
+    margin: vw(1024, 10) auto;
 
-      .buttonTitle {
-        display: block;
-        margin: 0;
-        font-style: normal;
-        font-weight: 900;
-        font-size: vw(320, 7);
-        line-height: vw(320, 9);
-        text-align: center;
-        color: #fff;
+    .buttonsListContainer {
+      margin: 0 auto vw(1024, 50);
+      .buttonItem {
+        margin: 0 vw(1024, 10) 0 0;
+
+        padding: vw(1024, 15) vw(1024, 20);
+        border-radius: vw(1024, 20);
+
+        .buttonTitle {
+          font-size: vw(1024, 15);
+          line-height: vw(1024, 17);
+        }
       }
-    }
 
-    .buttonItemHourDefault {
-      display: block;
-      position: relative;
-      margin: 0 vw(320, 5) 0 0;
-      border: none;
-      cursor: pointer;
-      background: rgb(71, 135, 120);
-      height: vw(320, 30);
-      max-height: vw(320, 20);
-      border-radius: vw(320, 10);
-      width: vw(320, 100);
-      max-width: vw(320, 30);
-      appearance: none;
-      -webkit-tap-highlight-color: transparent;
+      .buttonItemDefault {
+        margin: 0 vw(1024, 10) 0 0;
 
-      .buttonTitle {
-        display: block;
-        margin: 0;
-        font-style: normal;
-        font-weight: 900;
-        font-size: vw(320, 7);
-        line-height: vw(320, 9);
-        text-align: center;
-        color: #fff;
+        padding: vw(1024, 15) vw(1024, 20);
+        border-radius: vw(1024, 20);
+
+        .buttonTitle {
+          font-size: vw(1024, 15);
+          line-height: vw(1024, 17);
+        }
       }
     }
   }

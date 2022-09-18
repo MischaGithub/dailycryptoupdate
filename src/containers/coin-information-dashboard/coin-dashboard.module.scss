@@ -68,16 +68,6 @@
       text-align: center;
       color: #000;
     }
-
-    .coinInfoLabelTwo {
-      display: inline-block;
-      font-style: normal;
-      font-weight: 700;
-      font-size: vw(320, 7);
-      line-height: vw(320, 12);
-      text-align: center;
-      color: grey;
-    }
   }
 
   .coinDetailsContainer {
@@ -180,6 +170,39 @@
 
 @media screen and (min-width: 786px) and (max-width: 1920px) {
   .coinInfoContainer {
-    margin: vw(1024, 80) auto 0;
+    margin: vw(1024, 100) auto 0;
+
+    .coinDesContainer {
+      margin: 0 auto vw(1024, 30);
+
+      .coinRank {
+        margin: 0 0 0 vw(1024, 65);
+      }
+
+      .coinName {
+        margin: 0 vw(1024, 30) 0 0;
+      }
+    }
+
+    .coinDetailsContainer {
+      margin: 0 auto vw(1024, 60);
+
+      .coinDetails {
+        margin-bottom: vw(1024, 10);
+      }
+
+      .coinInfoLabelOne {
+        padding-right: vw(1024, 18);
+        margin-bottom: vw(1024, 10);
+        font-size: vw(1024, 20);
+        line-height: vw(1024, 21);
+      }
+
+      .coinInfoLabelTwo {
+        margin-bottom: vw(1024, 10);
+        font-size: vw(1024, 20);
+        line-height: vw(1024, 21);
+      }
+    }
   }
 }
