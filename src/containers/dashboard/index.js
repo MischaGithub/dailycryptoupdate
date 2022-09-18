@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import CryptoItem from '../../components/crypto-item';
 import fetchInititalData from '../../utils/fetchData';
 import styles from './dashboard.module.scss';
@@ -7,6 +8,21 @@ const Dashboard = () => {
   const { response } = fetchInititalData(
     'coins/markets?vs_currency=zar&order=market_cap_desc&per_page=10&page=1&sparkline=true'
   );
+  const [coinsList, setCoinsList] = useState(response);
+  const [hasMore, setHasMore] = useState(response);
+
+  const fetchMoreData = () => {
+    if (coinsList >= 100) {
+      // this.setState({ hasMore: false });
+      setHasMore(false);
+      return;
+    }
+    // a fake async api call like which sends
+    // 20 more records in .5 secs
+    setTimeout(() => {
+      console.log('fetching more data');
+    }, 100);
+  };
 
   return (
     <div className={styles.container}>

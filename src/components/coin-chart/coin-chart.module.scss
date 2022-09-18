@@ -1,6 +1,97 @@
+@use 'sass:math';
+
+@function vw($screenWidth, $pixelValue) {
+  $result: math.div($pixelValue, $screenWidth) * 100vw;
+  @return $result;
+}
+
 .chartContainer {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  margin: 10vw auto;
+  margin: vw(320, 10) auto;
   width: 90vw;
+
+  .pricesButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+
+    .heading {
+      display: inline-block;
+      margin: 0;
+      padding-bottom: vw(320, 10);
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 13);
+      line-height: vw(320, 15);
+      text-align: center;
+      letter-spacing: vw(320, 3);
+      color: #000;
+    }
+  }
+
+  .buttonsListContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 85vw;
+    margin: 0 auto vw(320, 10);
+    padding-inline-start: 0;
+    padding: 0;
+    list-style: none;
+
+    .buttonItem {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      background: rgb(71, 135, 120);
+      height: vw(320, 30);
+      max-height: vw(320, 20);
+      border-radius: vw(320, 10);
+      width: vw(320, 150);
+      max-width: vw(320, 50);
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .buttonItemHour {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      background: rgb(71, 135, 120);
+      height: vw(320, 30);
+      max-height: vw(320, 20);
+      border-radius: vw(320, 10);
+      width: vw(320, 100);
+      max-width: vw(320, 30);
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
 }
