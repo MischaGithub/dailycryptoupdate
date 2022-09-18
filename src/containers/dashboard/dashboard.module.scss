@@ -1,0 +1,168 @@
+@use 'sass:math';
+
+@function vw($screenWidth, $pixelValue) {
+  $result: math.div($pixelValue, $screenWidth) * 100vw;
+  @return $result;
+}
+
+.container {
+  display: block;
+  position: relative;
+  margin: vw(320, 30) auto 0;
+  width: 100vw;
+  background: white;
+
+  .headingContainer {
+    display: block;
+    margin: 0 auto vw(320, 30);
+
+    .headingTitle {
+      display: inline-block;
+      margin: 0;
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 15);
+      line-height: vw(320, 17);
+      text-align: center;
+      letter-spacing: vw(320, 3);
+      text-transform: uppercase;
+      color: #000;
+    }
+  }
+
+  .cryptoSectionContainer {
+    display: block;
+    width: 84vw;
+    margin: 0 auto vw(320, 10);
+
+    .headerContainer {
+      display: block;
+      margin: 0 auto vw(320, 20);
+      border-bottom: 1px solid #7393b3;
+      border-top: 1px solid #7393b3;
+    }
+
+    .headerList {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      width: 100%;
+      padding: vw(320, 5) 0;
+      padding-inline-start: vw(320, 5);
+      list-style: none;
+
+      .headerNumber {
+        display: block;
+        padding: 0 vw(320, 40) 0 0;
+      }
+
+      .headerCoin {
+        display: block;
+        padding: 0 vw(320, 90) 0 0;
+      }
+
+      .headerPrice {
+        display: block;
+        padding: 0;
+      }
+
+      .headerMktCap {
+        display: none;
+      }
+
+      .headerChart {
+        display: none;
+      }
+
+      .headerTitle {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 13);
+        line-height: vw(320, 15);
+        text-align: center;
+        letter-spacing: vw(320, 3);
+        color: #000;
+      }
+    }
+
+    .cryptoList {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      padding-inline-start: 0;
+      list-style: none;
+      width: 100%;
+
+      .coinBlock {
+        display: block;
+        position: relative;
+        margin: 0 auto vw(320, 17);
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 786px) and (max-width: 1920px) {
+  .container {
+    margin: vw(1024, 80) auto 0;
+
+    .headingContainer {
+      display: block;
+      margin: 0 auto vw(1024, 100);
+
+      .headingTitle {
+        font-size: vw(1024, 40);
+        line-height: vw(1024, 41);
+      }
+    }
+
+    .cryptoSectionContainer {
+      margin: 0 auto vw(1024, 10);
+
+      .headerContainer {
+        margin: 0 auto vw(1024, 30);
+      }
+
+      .headerList {
+        .headerNumber {
+          padding: 0 vw(1024, 20) 0 0;
+        }
+
+        .headerCoin {
+          padding: 0 vw(1024, 210) 0 0;
+        }
+
+        .headerPrice {
+          padding: 0 vw(1024, 150) 0 0;
+        }
+
+        .headerMktCap {
+          display: block;
+          padding: 0 vw(1024, 140) 0 0;
+        }
+
+        .headerChart {
+          display: block;
+          padding: 0 vw(1024, 0) 0 0;
+        }
+
+        .headerTitle {
+          font-size: vw(1024, 20);
+          line-height: vw(1024, 22);
+          letter-spacing: vw(1024, 3);
+          font-weight: 700;
+        }
+      }
+
+      .cryptoList {
+        .coinBlock {
+          margin: 0 auto vw(1024, 30);
+        }
+      }
+    }
+  }
+}

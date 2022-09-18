@@ -1,0 +1,208 @@
+@use 'sass:math';
+
+@function vw($screenWidth, $pixelValue) {
+  $result: math.div($pixelValue, $screenWidth) * 100vw;
+  @return $result;
+}
+
+.coinInfoContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  margin: vw(320, 30) auto;
+  background: white;
+
+  .loaderContainer {
+    display: block;
+    margin: vw(320, 30) auto;
+  }
+
+  .coinDesContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100vw;
+    margin: 0 auto vw(320, 10);
+
+    .coinRank {
+      display: block;
+      margin: 0 0 0 vw(320, 20);
+      background: rgb(127, 255, 212);
+      height: vw(320, 30);
+      max-height: vw(320, 10);
+      border-radius: vw(320, 10);
+      width: vw(320, 150);
+      max-width: vw(320, 50);
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 7);
+      line-height: vw(320, 9);
+      text-align: center;
+      color: #000;
+    }
+
+    .coinName {
+      display: block;
+      margin: 0 vw(320, 10) 0 0;
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 9);
+      line-height: vw(320, 11);
+      text-align: center;
+      color: #000;
+    }
+
+    img {
+      width: vw(320, 10);
+      height: vw(320, 10);
+      margin: 0 vw(320, 2) vw(320, 5) vw(320, 12);
+    }
+
+    .coinInfoLabel {
+      display: inline-block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: vw(320, 7);
+      line-height: vw(320, 12);
+      text-align: center;
+      color: #000;
+    }
+  }
+
+  .coinDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 85vw;
+    margin: 0 auto vw(320, 10);
+
+    .coinDetails {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: vw(320, 5);
+      border-bottom: 1px solid #7393b3;
+    }
+
+    .coinInfoLabelOne {
+      display: inline-block;
+      padding-right: vw(320, 18);
+      margin-bottom: vw(320, 5);
+      font-style: normal;
+      font-weight: 700;
+      font-size: vw(320, 7);
+      line-height: vw(320, 12);
+      text-align: center;
+      color: grey;
+    }
+
+    .coinInfoLabelTwo {
+      display: inline-block;
+      margin-bottom: vw(320, 5);
+      font-style: normal;
+      font-weight: 700;
+      font-size: vw(320, 7);
+      line-height: vw(320, 12);
+      text-align: center;
+      color: grey;
+    }
+  }
+
+  .buttonsListContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 85vw;
+    margin: 0 auto vw(320, 10);
+
+    .buttonItem {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      background: rgb(71, 135, 120);
+      height: vw(320, 30);
+      max-height: vw(320, 20);
+      border-radius: vw(320, 10);
+      width: vw(320, 150);
+      max-width: vw(320, 50);
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .buttonItemHour {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      background: rgb(71, 135, 120);
+      height: vw(320, 30);
+      max-height: vw(320, 20);
+      border-radius: vw(320, 10);
+      width: vw(320, 100);
+      max-width: vw(320, 30);
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 786px) and (max-width: 1920px) {
+  .coinInfoContainer {
+    margin: vw(1024, 100) auto 0;
+
+    .coinDesContainer {
+      margin: 0 auto vw(1024, 30);
+
+      .coinRank {
+        margin: 0 0 0 vw(1024, 65);
+      }
+
+      .coinName {
+        margin: 0 vw(1024, 30) 0 0;
+      }
+    }
+
+    .coinDetailsContainer {
+      margin: 0 auto vw(1024, 60);
+
+      .coinDetails {
+        margin-bottom: vw(1024, 10);
+      }
+
+      .coinInfoLabelOne {
+        padding-right: vw(1024, 18);
+        margin-bottom: vw(1024, 10);
+        font-size: vw(1024, 20);
+        line-height: vw(1024, 21);
+      }
+
+      .coinInfoLabelTwo {
+        margin-bottom: vw(1024, 10);
+        font-size: vw(1024, 20);
+        line-height: vw(1024, 21);
+      }
+    }
+  }
+}

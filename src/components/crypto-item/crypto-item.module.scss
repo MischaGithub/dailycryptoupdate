@@ -1,0 +1,176 @@
+@use 'sass:math';
+
+@function vw($screenWidth, $pixelValue) {
+  $result: math.div($pixelValue, $screenWidth) * 100vw;
+  @return $result;
+}
+
+.coinContainer {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #7393b3;
+
+  .coinInfoList {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 0 vw(320, 5) 0;
+    padding-inline-start: vw(320, 5);
+    list-style: none;
+
+    .coinRank {
+      display: block;
+      width: vw(320, 20);
+      margin: 0 vw(320, 10) 0 0;
+    }
+
+    .coinName {
+      display: flex;
+      width: vw(320, 130);
+      flex-direction: row;
+      margin: 0 vw(320, 20) 0 0;
+
+      img {
+        width: vw(320, 20);
+        height: vw(320, 20);
+        margin: 0 vw(320, 12) vw(320, 5) 0;
+      }
+    }
+
+    .coinPrice {
+      display: block;
+      margin: 0;
+    }
+
+    .coinMktCap {
+      display: none;
+    }
+
+    .coinChart {
+      display: none;
+    }
+
+    .coinInfoLabel {
+      display: inline-block;
+      padding-top: vw(320, 3);
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 10);
+      line-height: vw(320, 12);
+      text-align: center;
+      letter-spacing: vw(320, 3);
+      color: #000;
+    }
+
+    .coinInfoLabelPrice {
+      display: inline-block;
+      padding-top: vw(320, 3);
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 10);
+      line-height: vw(320, 12);
+      text-align: center;
+      color: #000;
+    }
+
+    .coinInfoLabelPriceG {
+      display: inline-block;
+      padding-top: vw(320, 3);
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 10);
+      line-height: vw(320, 12);
+      text-align: center;
+      color: green;
+    }
+
+    .coinInfoLabelPriceR {
+      display: inline-block;
+      padding-top: vw(320, 3);
+      font-style: normal;
+      font-weight: 900;
+      font-size: vw(320, 10);
+      line-height: vw(320, 12);
+      text-align: center;
+      color: red;
+    }
+  }
+}
+
+@media screen and (min-width: 786px) and (max-width: 1920px) {
+  .coinContainer {
+    .coinInfoList {
+      padding: 0 0 vw(1024, 5) 0;
+      .coinRank {
+        margin: 0 vw(1024, 10) 0 0;
+        width: vw(1024, 40);
+      }
+
+      .coinName {
+        margin: 0 vw(1024, 30) 0 0;
+        width: vw(1024, 180);
+        img {
+          width: vw(1024, 20);
+          height: vw(1024, 20);
+          margin: 0 vw(1024, 20) vw(1024, 5) 0;
+        }
+      }
+
+      .coinPrice {
+        margin: 0 vw(1024, 50) 0 0;
+        width: vw(1024, 180);
+      }
+
+      .coinMktCap {
+        display: block;
+        margin: 0 vw(1024, 100) 0 0;
+        width: vw(1024, 180);
+      }
+
+      .coinChart {
+        display: block;
+        padding: 0 vw(1024, 0) 0 0;
+      }
+
+      .coinInfoLabel {
+        font-size: vw(1024, 14);
+        line-height: vw(1024, 16);
+        letter-spacing: vw(1024, 3);
+        font-weight: 700;
+        padding-top: vw(1024, 3);
+      }
+
+      .coinInfoLabelPrice {
+        font-size: vw(1024, 12);
+        line-height: vw(1024, 14);
+        font-weight: 700;
+        padding-top: vw(1024, 3);
+      }
+
+      .coinInfoLabelPriceG {
+        font-size: vw(1024, 12);
+        line-height: vw(1024, 14);
+        font-weight: 700;
+        padding-top: vw(1024, 3);
+      }
+
+      .coinInfoLabelPriceR {
+        font-size: vw(1024, 12);
+        line-height: vw(1024, 14);
+        font-weight: 700;
+        padding-top: vw(1024, 3);
+      }
+    }
+
+    .cryptoList {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      padding-inline-start: 0;
+      list-style: none;
+    }
+  }
+}

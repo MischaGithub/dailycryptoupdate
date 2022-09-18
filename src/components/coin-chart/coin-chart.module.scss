@@ -1,0 +1,106 @@
+@use 'sass:math';
+
+@function vw($screenWidth, $pixelValue) {
+  $result: math.div($pixelValue, $screenWidth) * 100vw;
+  @return $result;
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: vw(320, 10) auto;
+  width: 90vw;
+
+  .buttonsListContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 85vw;
+    margin: 0 auto vw(320, 10);
+    padding-inline-start: 0;
+    padding: 0;
+    list-style: none;
+
+    .buttonItem {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      border: none;
+      cursor: pointer;
+      padding: vw(320, 5) vw(320, 10);
+      background: rgb(184, 184, 184);
+      border-radius: vw(320, 10);
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .buttonItemDefault {
+      display: block;
+      position: relative;
+      margin: 0 vw(320, 5) 0 0;
+      padding: vw(320, 5) vw(320, 10);
+      border: none;
+      cursor: pointer;
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      background: rgb(71, 135, 120);
+      border-radius: vw(320, 10);
+
+      .buttonTitle {
+        display: block;
+        margin: 0;
+        font-style: normal;
+        font-weight: 900;
+        font-size: vw(320, 7);
+        line-height: vw(320, 9);
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 786px) and (max-width: 1920px) {
+  .chartContainer {
+    margin: vw(1024, 10) auto;
+
+    .buttonsListContainer {
+      margin: 0 auto vw(1024, 50);
+      .buttonItem {
+        margin: 0 vw(1024, 10) 0 0;
+
+        padding: vw(1024, 15) vw(1024, 20);
+        border-radius: vw(1024, 20);
+
+        .buttonTitle {
+          font-size: vw(1024, 15);
+          line-height: vw(1024, 17);
+        }
+      }
+
+      .buttonItemDefault {
+        margin: 0 vw(1024, 10) 0 0;
+
+        padding: vw(1024, 15) vw(1024, 20);
+        border-radius: vw(1024, 20);
+
+        .buttonTitle {
+          font-size: vw(1024, 15);
+          line-height: vw(1024, 17);
+        }
+      }
+    }
+  }
+}
