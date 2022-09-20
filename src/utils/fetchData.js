@@ -23,8 +23,13 @@ const fetchData = (param) => {
   };
 
   useEffect(() => {
-    fetchCoinData(param);
-    window.scrollTo(0, 0);
+    let mounted = true;
+    if (mounted) {
+      fetchCoinData(param);
+      window.scrollTo(0, 0);
+    }
+
+    return () => (mounted = false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
