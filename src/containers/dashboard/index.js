@@ -42,7 +42,7 @@ const Dashboard = () => {
           </div>
           <ul className={styles.cryptoList}>
             {response?.map((coinItem) => (
-              <li key={coinItem.id} className={styles.coinBlock}>
+              <li key={coinItem?.id} className={styles.coinBlock}>
                 <CryptoItem coinItem={coinItem} />
               </li>
             ))}
