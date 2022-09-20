@@ -37,16 +37,17 @@ const CoinChart = () => {
   const [days, setDays] = useState('24h');
   const [newData, setNewData] = useState(null);
 
-  const handleDayUpdate = async (e, value) => {
-    setDays(value);
-  };
-
-  const handleSelectionUpdate = async (e, value) => {
-    setSelection(value);
+  const handleSelectionUpdate = async (e, setData, value) => {
+    setData(value);
   };
 
   useEffect(() => {
-    getChartData(id, days, setNewData);
+    let mounted = true;
+    if (mounted) {
+      getChartData(id, days, setNewData);
+    }
+
+    return () => (mounted = false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [days]);
@@ -80,12 +81,15 @@ const CoinChart = () => {
       <ul className={styles.buttonsListContainer}>
         {categoryDataOptions?.map((category) => (
           <li
+            key={category.name}
             className={
               selection === category.value
                 ? styles.buttonItemDefault
                 : styles.buttonItem
             }
-            onClick={(e) => handleSelectionUpdate(e, `${category?.value}`)}
+            onClick={(e) =>
+              handleSelectionUpdate(e, setSelection, `${category?.value}`)
+            }
           >
             <span className={styles.buttonTitle}>{category?.name}</span>
           </li>
@@ -100,7 +104,9 @@ const CoinChart = () => {
                   ? styles.buttonItemDefault
                   : styles.buttonItem
               }
-              onClick={(e) => handleDayUpdate(e, `${price?.value}`)}
+              onClick={(e) =>
+                handleSelectionUpdate(e, setDays, `${price?.value}`)
+              }
             >
               <span className={styles.buttonTitle}>{price?.name}</span>
             </button>
